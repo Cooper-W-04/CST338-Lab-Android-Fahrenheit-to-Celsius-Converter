@@ -9,6 +9,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.ctof_inclass_338.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,5 +23,7 @@ public class MainActivity extends AppCompatActivity {
         View view = binding.getRoot();
 
         setContentView(view);
+
+
     }
 }

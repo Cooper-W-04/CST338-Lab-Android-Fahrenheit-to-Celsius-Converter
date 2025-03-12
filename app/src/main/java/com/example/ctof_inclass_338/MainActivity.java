@@ -35,11 +35,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void convertValueFromDisplay(){
         double celciusValue = 0.0;
-        String enteredValue = binding.CtoFEnteredValueEditText.getText().toString;
+        String enteredValue = binding.CtoFEnteredValueEditText.getText().toString();
         if(!enteredValue.isEmpty()){
             celciusValue = Double.parseDouble(enteredValue);
         }
         double fahrenheitValue = Utils.cTof(celciusValue);
-        binding.CtoFConvertedValueTextView.setText(fahrenheitValue + " ")
+        binding.CtoFConvertedValueTextView.setText(fahrenheitValue + " ");
     }
 }

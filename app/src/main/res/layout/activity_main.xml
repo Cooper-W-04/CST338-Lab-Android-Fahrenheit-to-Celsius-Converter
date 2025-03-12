@@ -30,20 +30,20 @@
         app:layout_constrainTop_toBottomOf="@+id/CtoFTitleTextView"
         app:layout_constraintBottom_toTopOf="@+id/CtoFConvertButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CtoFTitleTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/CtoFTitleTextView"
+        app:layout_constraintVertical_bias="0.54" />
 
     <Button
         android:id="@+id/CtoFConvertButton"
         android:layout_width="215dp"
         android:layout_height="215dp"
-        android:layout_marginBottom="168dp"
+        android:layout_marginBottom="180dp"
         android:text="@string/convert"
         app:layout_constrainTop_toBottomOf="@+id/CtoFEnteredValueEditText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView

@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //stuff isn't working again
 //        binding.CtoFConvertButton.setOnLongClickListener(new View.OnLongClickListener(){
 //            @Override
 //            public void onLongClick(View view){

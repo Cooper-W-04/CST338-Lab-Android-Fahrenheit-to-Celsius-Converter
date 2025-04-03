@@ -31,6 +31,13 @@ public class MainActivity extends AppCompatActivity {
                 convertValueFromDisplay();
             }
         });
+
+//        binding.CtoFConvertButton.setOnLongClickListener(new View.OnLongClickListener(){
+//            @Override
+//            public void onLongClick(View view){
+//
+//            }
+//        });
     }
 
     private void convertValueFromDisplay(){

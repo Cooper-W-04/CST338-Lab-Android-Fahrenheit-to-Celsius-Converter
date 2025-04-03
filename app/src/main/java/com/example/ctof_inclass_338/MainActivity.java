@@ -53,6 +53,6 @@ public class MainActivity extends AppCompatActivity {
             celciusValue = Double.parseDouble(enteredValue);
         }
         double fahrenheitValue = Utils.cTof(celciusValue);
-        binding.CtoFConvertedValueTextView.setText(String.format("%.2f", fahrenheitValue)); //Format to 2 decimal places
+        binding.CtoFConvertedValueTextView.setText(String.format("%.2f", fahrenheitValue));
     }
 }

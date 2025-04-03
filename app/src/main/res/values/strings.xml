@@ -3,4 +3,5 @@
     <string name="c_to_f_converter">c_to_f_converter</string>
     <string name="convert">Convert!</string>
     <string name="enter_a_value_to_convert_to_fahrenheit">Enter a value to convert to Fahrenheit</string>
+    <string name="title_activity_fto_cactivity">FtoCActivity</string>
 </resources>

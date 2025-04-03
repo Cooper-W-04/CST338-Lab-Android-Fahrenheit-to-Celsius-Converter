@@ -1,5 +1,6 @@
 package com.example.ctof_inclass_338;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -32,13 +33,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//again not working
-//        binding.CtoFConvertButton.setOnLongClickListener(new View.OnLongClickListener(){
-//            @Override
-//            public void onLongClick(View view){
-//
-//            }
-//        });
+
+        binding.CtoFConvertButton.setOnLongClickListener(new View.OnLongClickListener(){
+            @Override
+            public boolean onLongClick(View view){
+                Intent intent = new Intent(MainActivity.this, FtoCActivity.class);
+                startActivity(intent);
+                return true;
+            }
+        });
     }
 
     private void convertValueFromDisplay(){

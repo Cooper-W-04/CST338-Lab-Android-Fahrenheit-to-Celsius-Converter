@@ -4,14 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.ctof_inclass_338.databinding.ActivityMainBinding;
-
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,31 +21,38 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(view);
 
-        binding.CtoFConvertButton.setOnClickListener(new View.OnClickListener(){
+        binding.CtoFConvertButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
                 convertValueFromDisplay();
             }
         });
 
-
-        binding.CtoFConvertButton.setOnLongClickListener(new View.OnLongClickListener(){
+        binding.CtoFConvertButton.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
-            public boolean onLongClick(View view){
+            public boolean onLongClick(View view) {
                 Intent intent = new Intent(MainActivity.this, FtoCActivity.class);
+                intent.putExtra("celsiusValue", binding.CtoFConvertedValueTextView.getText().toString());
                 startActivity(intent);
                 return true;
             }
         });
+
+        Intent intent = getIntent();
+        if (intent != null && intent.hasExtra("fahrenheitValue")) {
+            String fahrenheitValue = intent.getStringExtra("fahrenheitValue");
+            binding.CtoFEnteredValueEditText.setText(fahrenheitValue);
+            convertValueFromDisplay();
+        }
     }
 
-    private void convertValueFromDisplay(){
+    private void convertValueFromDisplay() {
         double celciusValue = 0.0;
         String enteredValue = binding.CtoFEnteredValueEditText.getText().toString();
-        if(!enteredValue.isEmpty()){
+        if (!enteredValue.isEmpty()) {
             celciusValue = Double.parseDouble(enteredValue);
         }
         double fahrenheitValue = Utils.cTof(celciusValue);
-        binding.CtoFConvertedValueTextView.setText(fahrenheitValue + " ");
+        binding.CtoFConvertedValueTextView.setText(String.format("%.2f", fahrenheitValue)); //Format to 2 decimal places
     }
 }

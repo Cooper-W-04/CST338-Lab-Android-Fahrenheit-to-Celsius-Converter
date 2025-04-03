@@ -21,6 +21,13 @@ public class FtoCActivity extends AppCompatActivity {
 
         setContentView(view);
 
+        Intent intent = getIntent();
+        if (intent != null && intent.hasExtra("celsiusValue")) {
+            String celsiusValue = intent.getStringExtra("celsiusValue");
+            binding.FtoCEnteredValueEditText.setText(celsiusValue);
+            convertValueFromDisplay();
+        }
+
         binding.FtoCConvertButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -31,8 +38,9 @@ public class FtoCActivity extends AppCompatActivity {
         binding.FtoCConvertButton.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                Intent intent = new Intent(FtoCActivity.this, ActivityFtoCactivityBinding.class);
-                startActivity(intent);
+                Intent mainIntent = new Intent(FtoCActivity.this, MainActivity.class);
+                mainIntent.putExtra("fahrenheitValue", binding.FtoCConvertedValueTextView.getText().toString());
+                startActivity(mainIntent);
                 return true;
             }
         });
@@ -44,7 +52,7 @@ public class FtoCActivity extends AppCompatActivity {
         if (!enteredValue.isEmpty()) {
             fahrenheitValue = Double.parseDouble(enteredValue);
         }
-        double celsiusValue = (fahrenheitValue - 32) * 5.0 / 9.0; // Correct F to C conversion
-        binding.FtoCConvertedValueTextView.setText(String.format("%.2f", celsiusValue)); // Format to 2 decimal places
+        double celsiusValue = (fahrenheitValue - 32) * 5.0 / 9.0;
+        binding.FtoCConvertedValueTextView.setText(String.format("%.2f", celsiusValue));
     }
 }
